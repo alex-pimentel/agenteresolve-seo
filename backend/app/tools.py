@@ -45,7 +45,8 @@ def run(ti: ToolInput) -> tuple[bytes, str, str]:
     lang = str((ti.params or {}).get("lang") or "pt")
     out = llm_complete(
         f"Generate an SEO/social content package in {lang} for the topic/URL below. "
-        "Return ONLY JSON with keys: title, meta_description, outline (array), body, social (array)."
+        "Return ONLY JSON with keys: title, meta_description, outline (array), "
+        "body, social (array)."
         f"\n\n{text}",
         system="You are an SEO copywriter. Return only JSON.",
     )
